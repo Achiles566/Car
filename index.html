@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Apex Motorworks — Modern Performance & Luxury Vehicles</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0c0e'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-family='Arial' font-size='58' font-weight='700' fill='%23e2422f'%3EA%3C/text%3E%3C/svg%3E">
+
+<style>
+
+:root{
+    --bg:#0b0c0e;
+    --panel:#141518;
+    --line:#232427;
+    --ink:#f2f1ee;
+    --mute:#9a9a9c;
+    --gold:#c9a15a;
+    --red:#e2422f;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+    margin:0;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:80px;
+}
+
+body{
+    background:var(--bg);
+    color:var(--ink);
+    font:400 16px/1.6 Inter,system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+}
+
+h1,
+h2,
+h3,
+.disp{
+    font-family:"Bebas Neue",Impact,sans-serif;
+    letter-spacing:.02em;
+    line-height:.95;
+    font-weight:400;
+}
+
+h2{
+    font-size:clamp(2.2rem,5vw,3.6rem);
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 clamp(18px,4vw,48px);
+}
+
+section{
+    padding:clamp(64px,9vw,120px) 0;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:.75rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-bottom:14px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:15px 30px;
+    background:var(--red);
+    color:#fff;
+    border:none;
+    font-weight:600;
+    font-size:.9rem;
+    letter-spacing:.03em;
+    border-radius:2px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c8371f;
+    transform:translateY(-2px);
+}
+
+.btn.ghost{
+    background:transparent;
+    border:1px solid rgba(242,241,238,.3);
+}
+
+.btn.ghost:hover{
+    background:rgba(242,241,238,.08);
+    border-color:var(--ink);
+}
+
+.lede{
+    color:var(--mute);
+    max-width:52ch;
+}
+
+:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:40;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px clamp(18px,4vw,48px);
+
+    transition:.35s;
+}
+
+nav.solid{
+    background:rgba(11,12,14,.92);
+    backdrop-filter:blur(12px);
+    padding-top:12px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    font:400 1.7rem "Bebas Neue",sans-serif;
+    letter-spacing:.08em;
+}
+
+.logo b{
+    color:var(--red);
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    font-size:.85rem;
+    font-weight:500;
+}
+
+nav ul a{
+    transition:.25s;
+}
+
+nav ul a:hover{
+    color:var(--gold);
+}
+
+.burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:0;
+    cursor:pointer;
+}
+
+.burger span{
+    width:24px;
+    height:2px;
+    background:var(--ink);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    padding-top:90px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            1100px 550px at 78% 18%,
+            rgba(201,161,90,.18),
+            transparent 60%
+        ),
+        radial-gradient(
+            900px 500px at 15% 90%,
+            rgba(226,66,47,.12),
+            transparent 60%
+        ),
+        var(--bg);
+}
+
+.hero .grid{
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            rgba(242,241,238,.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(242,241,238,.04) 1px,
+            transparent 1px
+        );
+
+    background-size:64px 64px;
+
+    mask-image:
+        linear-gradient(
+            180deg,
+            transparent,
+            #000 30%,
+            #000 70%,
+            transparent
+        );
+}
+
+.hero .in{
+    position:relative;
+    z-index:2;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:40px;
+    align-items:center;
+
+    width:100%;
+}
+
+.hero h1{
+    font-size:clamp(3.2rem,8vw,6.4rem);
+
+    opacity:0;
+    animation:up .9s .15s forwards;
+}
+
+.hero h1 span{
+    color:var(--red);
+}
+
+.hero p{
+    margin:20px 0 34px;
+    font-size:1.15rem;
+
+    opacity:0;
+    animation:up .9s .35s forwards;
+}
+
+.hero .cta{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+
+    opacity:0;
+    animation:up .9s .5s forwards;
+}
+
+.hero .stats{
+    display:flex;
+    gap:34px;
+    margin-top:46px;
+
+    opacity:0;
+    animation:up .9s .65s forwards;
+}
+
+.hero .stats b{
+    display:block;
+    font:400 2.1rem "Bebas Neue",sans-serif;
+    color:var(--gold);
+}
+
+.hero .stats span{
+    font-size:.78rem;
+    color:var(--mute);
+    letter-spacing:.05em;
+}
+
+/* REAL HERO CAR */
+
+.hero .rig{
+    position:relative;
+
+    opacity:0;
+    animation:carIn .9s .3s forwards;
+}
+
+.hero .rig::before{
+    content:"";
+    position:absolute;
+    inset:10% 5%;
+
+    background:radial-gradient(
+        circle,
+        rgba(226,66,47,.35),
+        transparent 65%
+    );
+
+    filter:blur(35px);
+}
+
+.hero-car{
+    position:relative;
+    width:100%;
+    height:520px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    border:1px solid rgba(242,241,238,.1);
+
+    box-shadow:
+        0 35px 70px rgba(0,0,0,.5),
+        0 0 60px rgba(226,66,47,.12);
+
+    filter:saturate(1.05) contrast(1.04);
+
+    transition:.6s;
+}
+
+.hero .rig:hover .hero-car{
+    transform:scale(1.02);
+}
+
+@keyframes up{
+    from{
+        opacity:0;
+        transform:translateY(22px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+@keyframes carIn{
+    from{
+        opacity:0;
+        transform:scale(.94) translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+/* =========================
+   FILTER BAR
+========================= */
+
+.fbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:44px;
+    padding-bottom:26px;
+
+    border-bottom:1px solid var(--line);
+}
+
+.chips{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.chip{
+    padding:9px 18px;
+
+    border:1px solid var(--line);
+    border-radius:30px;
+
+    background:transparent;
+    color:var(--mute);
+
+    font-size:.85rem;
+
+    cursor:pointer;
+    transition:.25s;
+}
+
+.chip.on,
+.chip:hover{
+    border-color:var(--gold);
+    color:var(--ink);
+}
+
+.price-f{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--mute);
+    font-size:.85rem;
+}
+
+.price-f input[type=range]{
+    accent-color:var(--gold);
+    width:160px;
+}
+
+/* =========================
+   INVENTORY
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fill,minmax(320px,1fr));
+
+    gap:26px;
+}
+
+.card{
+    background:var(--panel);
+
+    border:1px solid var(--line);
+    border-radius:6px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    opacity:0;
+    transform:translateY(18px);
+}
+
+.card.in{
+    opacity:1;
+    transform:none;
+}
+
+.card:hover{
+    border-color:var(--gold);
+    transform:translateY(-5px);
+}
+
+.card .shot{
+    aspect-ratio:16/10;
+
+    position:relative;
+    overflow:hidden;
+
+    background:#111;
+}
+
+.card .shot::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.35)
+        );
+
+    z-index:1;
+    pointer-events:none;
+}
+
+.card .shot::after{
+    content:attr(data-tag);
+
+    position:absolute;
+    top:12px;
+    left:12px;
+
+    z-index:3;
+
+    font-size:.68rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+    background:rgba(11,12,14,.72);
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    color:var(--gold);
+
+    backdrop-filter:blur(8px);
+}
+
+.vehicle-photo{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+        transform .6s ease,
+        filter .4s ease;
+}
+
+.card:hover .vehicle-photo{
+    transform:scale(1.07);
+    filter:saturate(1.08);
+}
+
+.card .body{
+    padding:20px 22px 24px;
+}
+
+.card h3{
+    font-size:1.5rem;
+}
+
+.card .specs{
+    display:flex;
+    gap:14px;
+
+    color:var(--mute);
+    font-size:.78rem;
+
+    margin:10px 0 16px;
+
+    flex-wrap:wrap;
+}
+
+.card .price{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card .price b{
+    font:400 1.5rem "Bebas Neue",sans-serif;
+    color:var(--gold);
+}
+
+.card .price a{
+    font-size:.8rem;
+    color:var(--ink);
+    border-bottom:1px solid var(--gold);
+}
+
+.empty{
+    text-align:center;
+    color:var(--mute);
+    padding:60px 0;
+    display:none;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-wrap{
+    position:fixed;
+    inset:0;
+    z-index:60;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal-wrap.on{
+    display:flex;
+}
+
+.backdrop{
+    position:absolute;
+    inset:0;
+
+    background:rgba(6,7,8,.78);
+
+    backdrop-filter:blur(4px);
+}
+
+.modal{
+    position:relative;
+
+    background:var(--panel);
+
+    border:1px solid var(--line);
+
+    max-width:1000px;
+    width:100%;
+
+    max-height:88vh;
+
+    overflow:auto;
+
+    border-radius:8px;
+
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+
+    z-index:2;
+}
+
+.modal .shot{
+    min-height:480px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:#101113;
+}
+
+.modal .shot img{
+    width:100%;
+    height:100%;
+
+    min-height:480px;
+
+    object-fit:cover;
+}
+
+.modal .info{
+    padding:50px 38px;
+
+    border-left:1px solid var(--line);
+}
+
+.modal-close{
+    position:absolute;
+
+    top:16px;
+    right:16px;
+
+    background:rgba(20,21,24,.9);
+
+    border:1px solid var(--line);
+
+    color:var(--ink);
+
+    width:36px;
+    height:36px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:1.1rem;
+
+    z-index:5;
+}
+
+.modal .eyebrow{
+    margin-bottom:6px;
+}
+
+.modal h3{
+    font-size:2.5rem;
+    margin-bottom:16px;
+}
+
+.modal .glist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+
+    margin:20px 0 26px;
+}
+
+.modal .glist div{
+    border-top:1px solid var(--line);
+    padding-top:8px;
+}
+
+.modal .glist span{
+    display:block;
+
+    font-size:.7rem;
+
+    color:var(--mute);
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+}
+
+.modal .glist b{
+    font:400 1.2rem "Bebas Neue",sans-serif;
+}
+
+.modal .price{
+    font:400 2rem "Bebas Neue",sans-serif;
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   FINANCING
+========================= */
+
+.fin{
+    background:var(--panel);
+
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.fin .box{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.field{
+    margin-bottom:22px;
+}
+
+.field label{
+    display:flex;
+    justify-content:space-between;
+
+    font-size:.82rem;
+
+    color:var(--mute);
+
+    margin-bottom:8px;
+}
+
+.field label b{
+    color:var(--ink);
+}
+
+.field input[type=range]{
+    width:100%;
+    accent-color:var(--gold);
+}
+
+.result{
+    background:var(--bg);
+
+    border:1px solid var(--line);
+
+    border-radius:8px;
+
+    padding:36px;
+
+    text-align:center;
+}
+
+.result .amt{
+    font:400 4rem "Bebas Neue",sans-serif;
+
+    color:var(--gold);
+
+    line-height:1;
+}
+
+.result span{
+    color:var(--mute);
+    font-size:.85rem;
+}
+
+.result .rows{
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:26px;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--line);
+
+    font-size:.85rem;
+
+    color:var(--mute);
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.quotes{
+    position:relative;
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:0 auto;
+
+    min-height:220px;
+}
+
+.q{
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transition:opacity 1s;
+}
+
+.q.on{
+    position:relative;
+    opacity:1;
+}
+
+.stars{
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+    margin-bottom:18px;
+}
+
+.q blockquote{
+    font-size:clamp(1.25rem,2.6vw,1.7rem);
+
+    font-weight:300;
+}
+
+.q cite{
+    display:block;
+
+    margin-top:22px;
+
+    font-style:normal;
+
+    color:var(--mute);
+
+    font-size:.85rem;
+}
+
+.dots{
+    display:flex;
+
+    gap:10px;
+
+    justify-content:center;
+
+    margin-top:36px;
+}
+
+.dots button{
+    width:30px;
+    height:2px;
+
+    border:0;
+
+    background:var(--line);
+
+    cursor:pointer;
+
+    padding:8px 0;
+
+    background-clip:content-box;
+}
+
+.dots button.on{
+    background-color:var(--gold);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.about .stats2{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:24px;
+
+    margin-top:30px;
+}
+
+.about .stats2 div{
+    border-top:1px solid var(--line);
+
+    padding-top:10px;
+}
+
+.about .stats2 b{
+    display:block;
+
+    font:400 2.4rem "Bebas Neue",sans-serif;
+
+    color:var(--gold);
+}
+
+.about .stats2 span{
+    font-size:.78rem;
+
+    color:var(--mute);
+}
+
+.about .rig{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+    min-height:430px;
+}
+
+.about-car{
+    width:100%;
+    height:430px;
+
+    object-fit:cover;
+
+    display:block;
+
+    filter:saturate(.95) contrast(1.05);
+
+    transition:.6s;
+}
+
+.about .rig:hover .about-car{
+    transform:scale(1.04);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.cwrap{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:56px;
+}
+
+form{
+    display:grid;
+    gap:16px;
+}
+
+form .r2{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+}
+
+input,
+select,
+textarea{
+    background:var(--panel);
+
+    border:1px solid var(--line);
+
+    color:var(--ink);
+
+    padding:13px 15px;
+
+    font:inherit;
+
+    border-radius:4px;
+
+    width:100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+
+    border-color:var(--gold);
+}
+
+textarea{
+    resize:vertical;
+
+    min-height:100px;
+}
+
+.thanks{
+    display:none;
+
+    background:var(--panel);
+
+    border:1px solid var(--gold);
+
+    padding:26px;
+
+    border-radius:6px;
+}
+
+.thanks.on{
+    display:block;
+}
+
+.cinfo div{
+    border-top:1px solid var(--line);
+
+    padding:18px 0;
+}
+
+.cinfo span{
+    display:block;
+
+    color:var(--mute);
+
+    font-size:.78rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    margin-bottom:4px;
+}
+
+.cinfo b{
+    font-size:1.05rem;
+
+    font-weight:500;
+}
+
+footer{
+    border-top:1px solid var(--line);
+
+    padding:40px 0;
+
+    text-align:center;
+
+    color:var(--mute);
+
+    font-size:.82rem;
+}
+
+.rv{
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.8s;
+}
+
+.rv.in{
+    opacity:1;
+
+    transform:none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .hero .in{
+        grid-template-columns:1fr;
+    }
+
+    .hero .rig{
+        order:-1;
+
+        max-width:600px;
+
+        width:100%;
+
+        margin:0 auto;
+    }
+
+    .hero-car{
+        height:380px;
+    }
+
+    .about,
+    .fin .box,
+    .cwrap{
+        grid-template-columns:1fr;
+    }
+
+    nav ul{
+        position:fixed;
+
+        top:0;
+        right:0;
+
+        height:100svh;
+
+        background:var(--panel);
+
+        flex-direction:column;
+
+        width:240px;
+
+        padding:100px 30px;
+
+        transform:translateX(100%);
+
+        transition:.35s;
+
+        border-left:1px solid var(--line);
+    }
+
+    nav ul.open{
+        transform:translateX(0);
+    }
+
+    .burger{
+        display:flex;
+    }
+
+    .modal{
+        grid-template-columns:1fr;
+    }
+
+    .modal .shot{
+        min-height:300px;
+    }
+
+    .modal .shot img{
+        min-height:300px;
+        max-height:400px;
+    }
+
+    .modal .info{
+        border-left:0;
+
+        border-top:1px solid var(--line);
+
+        padding:30px;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding-top:110px;
+    }
+
+    .hero-car{
+        height:280px;
+    }
+
+    .hero .stats{
+        gap:20px;
+
+        flex-wrap:wrap;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    form .r2{
+        grid-template-columns:1fr;
+    }
+
+    .about .stats2{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .result{
+        padding:26px 18px;
+    }
+
+    .result .amt{
+        font-size:3.3rem;
+    }
+
+    .modal{
+        max-height:92vh;
+    }
+
+    .modal .info{
+        padding:26px 22px;
+    }
+
+    .modal h3{
+        font-size:2rem;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+    }
+
+    .hero h1,
+    .hero p,
+    .hero .cta,
+    .hero .stats,
+    .hero .rig{
+        opacity:1;
+
+        transform:none;
+    }
+
+    html{
+        scroll-behavior:auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav id="nav">
+
+    <a class="logo" href="#top">
+        APEX<b>.</b>
+    </a>
+
+    <button
+        class="burger"
+        id="burger"
+        aria-label="Menu"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <ul id="navlinks">
+        <li><a href="#inventory">Inventory</a></li>
+        <li><a href="#financing">Financing</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero" id="top">
+
+    <div class="grid"></div>
+
+    <div class="wrap in">
+
+        <div>
+
+            <div class="eyebrow">
+                Apex Motorworks · Est. 2011
+            </div>
+
+            <h1>
+                Drive the<br>
+                <span>Exception.</span>
+            </h1>
+
+            <p class="lede">
+                Curated performance, luxury and electric vehicles —
+                inspected, certified and delivered with a white-glove
+                experience. This is a fictional demo dealership.
+            </p>
+
+            <div class="cta">
+
+                <a class="btn" href="#inventory">
+                    Browse Inventory
+                </a>
+
+                <a class="btn ghost" href="#contact">
+                    Book a Test Drive
+                </a>
+
+            </div>
+
+            <div class="stats">
+
+                <div>
+                    <b>412</b>
+                    <span>cars placed</span>
+                </div>
+
+                <div>
+                    <b>4.9</b>
+                    <span>avg. rating</span>
+                </div>
+
+                <div>
+                    <b>14</b>
+                    <span>brands curated</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rig">
+
+            <img
+                class="hero-car"
+                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=85"
+                alt="Luxury performance sports car"
+            >
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     INVENTORY
+========================= -->
+
+<section id="inventory">
+
+    <div class="wrap">
+
+        <div class="eyebrow rv">
+            Inventory
+        </div>
+
+        <h2
+            class="rv"
+            style="margin-bottom:36px"
+        >
+            Current lineup
+        </h2>
+
+
+        <div class="fbar rv">
+
+            <div class="chips" id="chips"></div>
+
+            <div class="price-f">
+
+                Max price
+
+                <b id="pmaxlabel">$110k</b>
+
+                <input
+                    type="range"
+                    id="pmax"
+                    min="40000"
+                    max="110000"
+                    step="1000"
+                    value="110000"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="cards" id="cards"></div>
+
+        <p class="empty" id="empty">
+            No vehicles match those filters —
+            try widening your price range.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VEHICLE MODAL
+========================= -->
+
+<div class="modal-wrap" id="modalWrap">
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <div class="modal" id="modal"></div>
+
+</div>
+
+
+<!-- =========================
+     FINANCING
+========================= -->
+
+<section class="fin" id="financing">
+
+    <div class="wrap box">
+
+        <div>
+
+            <div class="eyebrow rv">
+                Financing
+            </div>
+
+            <h2 class="rv">
+                Estimate your payment
+            </h2>
+
+            <p
+                class="lede rv"
+                style="margin:14px 0 30px"
+            >
+                Flexible terms through our partner lenders.
+                Figures are illustrative only.
+            </p>
+
+
+            <div class="rv">
+
+                <div class="field">
+
+                    <label>
+                        Vehicle price
+                        <b id="lp">$65,000</b>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="price"
+                        min="40000"
+                        max="110000"
+                        step="1000"
+                        value="65000"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Down payment
+                        <b id="ld">$10,000</b>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="down"
+                        min="0"
+                        max="40000"
+                        step="1000"
+                        value="10000"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Loan term
+                        <b id="lt">60 mo</b>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="term"
+                        min="24"
+                        max="84"
+                        step="12"
+                        value="60"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        APR
+                        <b id="lr">5.9%</b>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="rate"
+                        min="2"
+                        max="12"
+                        step=".1"
+                        value="5.9"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="result rv">
+
+            <div
+                class="amt"
+                id="monthly"
+            >
+                $0
+            </div>
+
+            <span>
+                estimated per month
+            </span>
+
+
+            <div class="rows">
+                <span>Loan amount</span>
+                <span id="loanamt">$0</span>
+            </div>
+
+
+            <div class="rows">
+                <span>Total interest</span>
+                <span id="totint">$0</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section id="reviews">
+
+    <div class="wrap">
+
+        <div
+            class="eyebrow rv"
+            style="text-align:center"
+        >
+            Reviews
+        </div>
+
+        <h2
+            class="rv"
+            style="text-align:center;margin-bottom:50px"
+        >
+            What clients say
+        </h2>
+
+
+        <div class="quotes" id="quotes">
+
+            <div class="q on">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <blockquote>
+                    “Found my Raven Roadster in two days flat.
+                    Zero pressure, and the paperwork took twenty minutes.”
+                </blockquote>
+
+                <cite>
+                    — Marcus T.
+                </cite>
+
+            </div>
+
+
+            <div class="q">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <blockquote>
+                    “They drove the Solstice EV to my office for a test drive.
+                    Bought it the same afternoon.”
+                </blockquote>
+
+                <cite>
+                    — Priya N.
+                </cite>
+
+            </div>
+
+
+            <div class="q">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <blockquote>
+                    “Traded in two cars, walked out with an Atlas Overland.
+                    Honest numbers, no games.”
+                </blockquote>
+
+                <cite>
+                    — Daniel K.
+                </cite>
+
+            </div>
+
+        </div>
+
+
+        <div class="dots" id="dots"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="wrap about">
+
+        <div class="rv">
+
+            <div class="eyebrow">
+                About Apex
+            </div>
+
+            <h2>
+                Fifteen years of straight-talk car buying
+            </h2>
+
+            <p
+                class="lede"
+                style="margin:18px 0"
+            >
+                Apex Motorworks started as a single showroom and grew
+                into a curated marketplace for performance, luxury and
+                electric vehicles. Every car is inspected by our own
+                technicians before it reaches the floor.
+            </p>
+
+            <p class="lede">
+                All names, vehicles and figures on this page are fictional,
+                built for design-portfolio purposes.
+            </p>
+
+
+            <div class="stats2">
+
+                <div>
+                    <b>15 yrs</b>
+                    <span>in business</span>
+                </div>
+
+                <div>
+                    <b>412</b>
+                    <span>vehicles sold</span>
+                </div>
+
+                <div>
+                    <b>98%</b>
+                    <span>would refer a friend</span>
+                </div>
+
+                <div>
+                    <b>24 hr</b>
+                    <span>average delivery prep</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rig rv">
+
+            <img
+                class="about-car"
+                src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85"
+                alt="Luxury car photographed outdoors"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="wrap cwrap">
+
+        <div class="rv">
+
+            <div class="eyebrow">
+                Contact
+            </div>
+
+            <h2 style="margin-bottom:20px">
+                Request a test drive
+            </h2>
+
+
+            <form id="cform">
+
+                <div class="r2">
+
+                    <input
+                        required
+                        placeholder="Full name"
+                        id="cname"
+                    >
+
+                    <input
+                        required
+                        type="email"
+                        placeholder="Email"
+                        id="cemail"
+                    >
+
+                </div>
+
+
+                <div class="r2">
+
+                    <input
+                        placeholder="Phone"
+                        id="cphone"
+                    >
+
+                    <select id="ccar">
+
+                        <option value="">
+                            Vehicle of interest (optional)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <textarea
+                    placeholder="Tell us what you're looking for..."
+                    id="cmsg"
+                ></textarea>
+
+
+                <button
+                    class="btn"
+                    type="submit"
+                >
+                    Send request
+                </button>
+
+            </form>
+
+
+            <div
+                class="thanks"
+                id="thanks"
+            >
+                Thanks — a fictional Apex Motorworks advisor will
+                "reach out" shortly. (Demo form, nothing is actually sent.)
+            </div>
+
+        </div>
+
+
+        <div class="rv cinfo">
+
+            <div
+                class="eyebrow"
+                style="margin-bottom:10px"
+            >
+                Showroom
+            </div>
+
+
+            <div>
+
+                <span>Address</span>
+
+                <b>
+                    1180 Meridian Parkway, Fictional Heights
+                </b>
+
+            </div>
+
+
+            <div>
+
+                <span>Phone</span>
+
+                <b>
+                    (555) 019-4420
+                </b>
+
+            </div>
+
+
+            <div>
+
+                <span>Email</span>
+
+                <b>
+                    hello@apexmotorworks.example
+                </b>
+
+            </div>
+
+
+            <div>
+
+                <span>Hours</span>
+
+                <b>
+                    Mon–Sat, 9am – 7pm
+                </b>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    APEX MOTORWORKS —
+    a fictional dealership created for portfolio purposes.
+    All vehicles, prices and staff are invented.
+
+</footer>
+
+
+<script>
+
+/* =========================
+   VEHICLE DATA
+========================= */
+
+const CARS = [
+
+{
+    n:"Apex GT Coupe",
+    cat:"Sports",
+    tag:"New",
+    price:89900,
+
+    image:
+    "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        "0–60":"3.4s",
+        Power:"512 hp",
+        Drive:"RWD",
+        Seats:"2+2"
+    },
+
+    d:
+    "A track-tuned coupe with a carbon-fiber splitter and adaptive suspension built for canyon roads."
+},
+
+{
+    n:"Meridian SUV",
+    cat:"SUV",
+    tag:"Popular",
+    price:64500,
+
+    image:
+    "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        "0–60":"5.8s",
+        Power:"355 hp",
+        Drive:"AWD",
+        Seats:"7"
+    },
+
+    d:
+    "A three-row luxury SUV with air suspension and a cabin quiet enough to hear the tires think."
+},
+
+{
+    n:"Solstice EV",
+    cat:"Electric",
+    tag:"Electric",
+    price:58900,
+
+    image:
+    "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        Range:"312 mi",
+        Power:"440 hp",
+        Drive:"AWD",
+        Charge:"20 min"
+    },
+
+    d:
+    "A fastback electric sedan with 312 miles of range and fast-charging that outpaces a coffee run."
+},
+
+{
+    n:"Continental Sedan",
+    cat:"Sedan",
+    tag:"Certified",
+    price:52300,
+
+    image:
+    "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        "0–60":"6.9s",
+        Power:"268 hp",
+        Drive:"RWD",
+        Seats:"5"
+    },
+
+    d:
+    "A quietly confident daily driver with hand-stitched leather and a twelve-speaker system."
+},
+
+{
+    n:"Raven Roadster",
+    cat:"Sports",
+    tag:"Limited",
+    price:102000,
+
+    image:
+    "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        "0–60":"3.1s",
+        Power:"580 hp",
+        Drive:"RWD",
+        Seats:"2"
+    },
+
+    d:
+    "An open-top roadster limited to a handful of builds a year, tuned for weekend blasts."
+},
+
+{
+    n:"Atlas Overland",
+    cat:"SUV",
+    tag:"New",
+    price:71200,
+
+    image:
+    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        "0–60":"6.2s",
+        Power:"390 hp",
+        Drive:"AWD",
+        Seats:"7"
+    },
+
+    d:
+    "Off-road capable without sacrificing the cabin — locking diffs meet quilted leather."
+},
+
+{
+    n:"Volt Streak EV",
+    cat:"Electric",
+    tag:"Electric",
+    price:47800,
+
+    image:
+    "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        Range:"268 mi",
+        Power:"320 hp",
+        Drive:"FWD",
+        Charge:"25 min"
+    },
+
+    d:
+    "An efficient, city-friendly EV with a surprisingly quick 0–60 for daily commuting."
+},
+
+{
+    n:"Heritage Classic Sedan",
+    cat:"Sedan",
+    tag:"Certified",
+    price:45600,
+
+    image:
+    "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=85",
+
+    position:"center",
+
+    specs:{
+        "0–60":"7.8s",
+        Power:"228 hp",
+        Drive:"FWD",
+        Seats:"5"
+    },
+
+    d:
+    "A dependable, well-kept sedan for buyers who want understated comfort over flash."
+}
+
+];
+
+
+/* =========================
+   SELECTOR
+========================= */
+
+const $ = s => document.querySelector(s);
+
+let activeCat = "All";
+
+let maxPrice = 110000;
+
+
+/* =========================
+   CATEGORY FILTERS
+========================= */
+
+const cats = [
+    "All",
+    "Sedan",
+    "SUV",
+    "Sports",
+    "Electric"
+];
+
+$("#chips").innerHTML = cats
+.map(c => `
+    <button
+        class="chip ${c === "All" ? "on" : ""}"
+        data-c="${c}"
+    >
+        ${c}
+    </button>
+`)
+.join("");
+
+
+/* =========================
+   CONTACT VEHICLE SELECT
+========================= */
+
+$("#ccar").innerHTML += CARS
+.map(c => `<option>${c.n}</option>`)
+.join("");
+
+
+/* =========================
+   MONEY
+========================= */
+
+function money(n){
+
+    return "$" +
+    Math.round(n).toLocaleString();
+
+}
+
+
+/* =========================
+   RENDER VEHICLES
+========================= */
+
+function render(){
+
+    const list = CARS.filter(c =>
+        (activeCat === "All" || c.cat === activeCat)
+        &&
+        c.price <= maxPrice
+    );
+
+
+    $("#cards").innerHTML = list
+    .map((c,i) => {
+
+        return `
+
+        <article
+            class="card"
+            data-i="${CARS.indexOf(c)}"
+            style="transition-delay:${i * 60}ms"
+        >
+
+            <div
+                class="shot"
+                data-tag="${c.tag}"
+            >
+
+                <img
+                    class="vehicle-photo"
+                    src="${c.image}"
+                    alt="${c.n}"
+                    loading="lazy"
+                    style="object-position:${c.position}"
+                >
+
+            </div>
+
+
+            <div class="body">
+
+                <h3>
+                    ${c.n}
+                </h3>
+
+
+                <div class="specs">
+
+                    ${
+                        Object.entries(c.specs)
+                        .map(([k,v]) =>
+                            `<span>${k}: ${v}</span>`
+                        )
+                        .join("")
+                    }
+
+                </div>
+
+
+                <div class="price">
+
+                    <b>
+                        ${money(c.price)}
+                    </b>
+
+                    <a href="#">
+                        View details →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        `;
+
+    })
+    .join("");
+
+
+    $("#empty").style.display =
+        list.length ? "none" : "block";
+
+
+    document
+    .querySelectorAll("#cards .card")
+    .forEach(el => {
+
+        io.observe(el);
+
+        el.onclick = () =>
+            openModal(
+                +el.dataset.i
+            );
+
+    });
+
+}
+
+
+/* =========================
+   CATEGORY CLICK
+========================= */
+
+$("#chips").onclick = e => {
+
+    const b =
+        e.target.closest(".chip");
+
+    if(!b) return;
+
+
+    activeCat =
+        b.dataset.c;
+
+
+    document
+    .querySelectorAll(".chip")
+    .forEach(c =>
+        c.classList.toggle(
+            "on",
+            c === b
+        )
+    );
+
+
+    render();
+
+};
+
+
+/* =========================
+   PRICE FILTER
+========================= */
+
+$("#pmax").oninput = e => {
+
+    maxPrice =
+        +e.target.value;
+
+
+    $("#pmaxlabel").textContent =
+        "$" +
+        Math.round(maxPrice / 1000) +
+        "k";
+
+
+    render();
+
+};
+
+
+/* =========================
+   VEHICLE MODAL
+========================= */
+
+function openModal(i){
+
+    const c = CARS[i];
+
+
+    $("#modal").innerHTML = `
+
+        <button
+            class="modal-close"
+            id="mclose"
+            aria-label="Close"
+        >
+            ✕
+        </button>
+
+
+        <div class="shot">
+
+            <img
+                src="${c.image}"
+                alt="${c.n}"
+                style="object-position:${c.position}"
+            >
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="eyebrow">
+                ${c.cat} · ${c.tag}
+            </div>
+
+
+            <h3>
+                ${c.n}
+            </h3>
+
+
+            <p class="lede">
+                ${c.d}
+            </p>
+
+
+            <div class="glist">
+
+                ${
+                    Object.entries(c.specs)
+                    .map(([k,v]) => `
+
+                        <div>
+
+                            <span>
+                                ${k}
+                            </span>
+
+                            <b>
+                                ${v}
+                            </b>
+
+                        </div>
+
+                    `)
+                    .join("")
+                }
+
+            </div>
+
+
+            <div class="price">
+                ${money(c.price)}
+            </div>
+
+
+            <a
+                class="btn"
+                href="#contact"
+                id="mcta"
+            >
+                Request this vehicle
+            </a>
+
+        </div>
+
+    `;
+
+
+    $("#modalWrap")
+        .classList
+        .add("on");
+
+
+    $("#mclose").onclick =
+        closeModal;
+
+
+    $("#mcta").onclick = () => {
+
+        closeModal();
+
+        $("#ccar").value =
+            c.n;
+
+    };
+
+}
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+function closeModal(){
+
+    $("#modalWrap")
+        .classList
+        .remove("on");
+
+}
+
+
+$("#backdrop").onclick =
+    closeModal;
+
+
+addEventListener(
+    "keydown",
+    e => {
+
+        if(e.key === "Escape"){
+            closeModal();
+        }
+
+    }
+);
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const io =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(x => {
+
+                if(x.isIntersecting){
+
+                    x.target
+                        .classList
+                        .add("in");
+
+                    io.unobserve(
+                        x.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+render();
+
+
+/* =========================
+   FINANCING CALCULATOR
+========================= */
+
+function calc(){
+
+    const price =
+        +$("#price").value;
+
+    const down =
+        +$("#down").value;
+
+    const term =
+        +$("#term").value;
+
+    const rate =
+        +$("#rate").value;
+
+
+    $("#lp").textContent =
+        money(price);
+
+    $("#ld").textContent =
+        money(down);
+
+    $("#lt").textContent =
+        term + " mo";
+
+    $("#lr").textContent =
+        rate.toFixed(1) + "%";
+
+
+    const loan =
+        Math.max(
+            price - down,
+            0
+        );
+
+
+    const m =
+        rate / 100 / 12;
+
+
+    const pay =
+        m
+
+        ?
+
+        loan *
+        m /
+        (
+            1 -
+            Math.pow(
+                1 + m,
+                -term
+            )
+        )
+
+        :
+
+        loan / term;
+
+
+    $("#monthly").textContent =
+        money(pay);
+
+    $("#loanamt").textContent =
+        money(loan);
+
+    $("#totint").textContent =
+        money(
+            pay * term - loan
+        );
+
+}
+
+
+[
+    "price",
+    "down",
+    "term",
+    "rate"
+]
+.forEach(id => {
+
+    $("#" + id).oninput =
+        calc;
+
+});
+
+
+calc();
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+const qs =
+    document.querySelectorAll(".q");
+
+
+$("#dots").innerHTML =
+    [...qs]
+    .map((_,i) => `
+
+        <button
+            aria-label="Review ${i + 1}"
+            class="${i === 0 ? "on" : ""}"
+        >
+        </button>
+
+    `)
+    .join("");
+
+
+const ds =
+    document.querySelectorAll(
+        "#dots button"
+    );
+
+
+let qi = 0;
+
+let qt;
+
+
+function showQ(n){
+
+    qi = n;
+
+
+    qs.forEach((q,k) =>
+        q.classList.toggle(
+            "on",
+            k === n
+        )
+    );
+
+
+    ds.forEach((d,k) =>
+        d.classList.toggle(
+            "on",
+            k === n
+        )
+    );
+
+}
+
+
+function runQ(){
+
+    clearInterval(qt);
+
+
+    qt = setInterval(
+        () =>
+            showQ(
+                (qi + 1) %
+                qs.length
+            ),
+        5500
+    );
+
+}
+
+
+ds.forEach((d,k) => {
+
+    d.onclick = () => {
+
+        showQ(k);
+
+        runQ();
+
+    };
+
+});
+
+
+runQ();
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+addEventListener(
+    "scroll",
+    () =>
+        $("#nav")
+        .classList
+        .toggle(
+            "solid",
+            scrollY > 50
+        ),
+    {
+        passive:true
+    }
+);
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+$("#burger").onclick = () => {
+
+    const open =
+        $("#navlinks")
+        .classList
+        .toggle("open");
+
+
+    $("#burger")
+        .setAttribute(
+            "aria-expanded",
+            open
+        );
+
+};
+
+
+document
+.querySelectorAll("#navlinks a")
+.forEach(a => {
+
+    a.onclick = () => {
+
+        $("#navlinks")
+            .classList
+            .remove("open");
+
+        $("#burger")
+            .setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+    };
+
+});
+
+
+/* =========================
+   GENERAL REVEALS
+========================= */
+
+document
+.querySelectorAll(".rv")
+.forEach(el =>
+    io.observe(el)
+);
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+$("#cform").onsubmit = e => {
+
+    e.preventDefault();
+
+
+    $("#cform")
+        .style
+        .display = "none";
+
+
+    $("#thanks")
+        .classList
+        .add("on");
+
+};
+
+</script>
+
+</body>
+</html>
